@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Vincent Ferreras</title>
+  <meta name="description" content="Contact Vincent Ferreras, send a prayer request or share a testimony.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A1628'/%3E%3Cpath d='M28 10h8v14h14v8H36v22h-8V32H14v-8h14z' fill='%23E8B84A'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="contact">
+  <div id="site-header"></div>
+
+  <main id="top">
+    <section class="block reveal">
+      <h2 data-n="07">Contact, prayer requests and testimonies</h2>
+      <div class="contact-grid">
+        <div>
+          <p>Send me a message, share a prayer request or tell me how God has worked in your life. I would be glad to hear from you.</p>
+          <div class="actions">
+            <a class="btn" href="mailto:vincentferreras98@gmail.com">Email me</a>
+            <a class="btn ghost" href="https://www.facebook.com/vincent.ferreras.2025" target="_blank" rel="noopener">Facebook</a>
+          </div>
+        </div>
+        <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="contact">
+          <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
+          <fieldset>
+            <legend>send_message()</legend>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your full name">
+            <span class="error" id="name-error"></span>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com">
+            <span class="error" id="email-error"></span>
+            <label for="topic">Topic</label>
+            <select id="topic" name="topic">
+              <option>Message</option>
+              <option>Prayer request</option>
+              <option>Testimony</option>
+            </select>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Write at least 10 characters"></textarea>
+            <span class="error" id="message-error"></span>
+            <button class="btn" type="submit">Send</button>
+            <p id="form-status" role="status"></p>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vincent Ferreras | Faith, Code and Service</title>
+  <meta name="description" content="Personal website of Vincent Ferreras, Computer Science student and servant leader.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A1628'/%3E%3Cpath d='M28 10h8v14h14v8H36v22h-8V32H14v-8h14z' fill='%23E8B84A'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="index">
+  <div id="site-header"></div>
+
+  <main id="top">
+    <div class="hero-wrap">
+      <section class="hero">
+        <div>
+          <span class="tag mono">// faith.code.service</span>
+          <h1>Vincent Ferreras</h1>
+          <p class="typed-line"><span id="typed"></span><span class="caret" aria-hidden="true"></span></p>
+          <p class="lead">A Computer Science student at City College of Calamba. I have served in church ministries since 2014 and now lead the B.Y.S.C. youth fellowship.</p>
+          <div class="actions">
+            <a class="btn" href="gospel.html">How to be saved</a>
+            <a class="btn ghost" href="about.html">About me</a>
+            <a class="btn ghost" href="contact.html">Contact me</a>
+          </div>
+        </div>
+        <div class="code-card" aria-live="polite">
+          <div class="code-bar"><span>verse.js</span><button id="verse-btn" type="button">Another verse</button></div>
+          <pre><code><span id="verse-label" class="c"></span>
+<span class="k">const</span> verse = {
+  <span class="p">text</span>: <span id="verse-text" class="s"></span>,
+  <span class="p">ref</span>: <span id="verse-ref" class="s"></span>
+};</code></pre>
+        </div>
+      </section>
+      <section class="stats" id="stats" aria-label="Quick facts"></section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
