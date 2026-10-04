@@ -185,7 +185,7 @@ if (page === "contact") {
     const status = $("form-status");
     if (name === "" || !emailOk || message.length < 10) { status.textContent = ""; return; }
     status.textContent = "Sending...";
-    fetch("/contact.html", {
+        fetch("/contact.html", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(new FormData(form)).toString()
