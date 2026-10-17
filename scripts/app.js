@@ -8,7 +8,7 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
 const ICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A1628'/%3E%3Cpath d='M28 10h8v14h14v8H36v22h-8V32H14v-8h14z' fill='%23E8B84A'/%3E%3C/svg%3E";
 const menu = [["index", "Home"], ["about", "About"], ["gospel", "Gospel"], ["encouragement", "Encouragement"], ["service", "Service"], ["education", "Education"], ["achievements", "Achievements"], ["gallery", "Gallery"], ["contact", "Contact"]];
 $("site-header").outerHTML =
-  '<header class="site-header"><a class="brand" href="index.html"><img src="' + ICON + '" alt="" width="28" height="28"><span>Vincent Ferreras</span></a>' +
+ '<header class="site-header"><a class="brand" href="index.html" aria-label="Vincent Ferreras, go to Home page"><img src="' + ICON + '" alt="" width="28" height="28"><span>Vincent Ferreras</span></a>' +
   '<nav id="nav" aria-label="Main"><ul class="nav-list">' +
   menu.map(function (m) { return '<li><a href="' + m[0] + '.html"' + (m[0] === page ? ' class="active" aria-current="page"' : "") + ">" + m[1] + "</a></li>"; }).join("") +
   '</ul></nav><div class="controls"><button id="theme-btn" class="ctl" type="button" aria-pressed="true">Light mode</button>' +
