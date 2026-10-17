@@ -153,9 +153,20 @@ const photos = [
   pic("nstp-1", "National Service Training Program", "school"),
   pic("nstp-2", "National Service Training Program", "school"),
   pic("nstp-3", "National Service Training Program", "school"),
+  pic("academy-choir", "Academy choir", "school"),
+  pic("skit-by-byf", "B.Y.F. skit", "church"),
+  pic("skit-by-byf-2", "B.Y.F. skit", "church"),
+  pic("bida-bida-sa-skit", "B.Y.F. skit", "church"),
+  pic("mc-skit-sabayang-bigkas", "B.Y.F. skit", "church"),
+  pic("multimedia-audio-men", "Multimedia and audio ministry", "church"),
+  pic("multimedia-audio-men-2", "Multimedia and audio ministry", "church"),
+  pic("area-leader-meeting-and-fellowship", "Area leaders meeting and fellowship", "church"),
+  pic("academy-entrepreneurship", "Academy entrepreneurship", "school"),
   pic("volunteer-1", "Community volunteer work", "community")
 ];
-
+  
 // 6. Gallery videos
 // type "file": put the .mp4 in the videos folder. type "youtube": use the video ID from the link.
-const videos = [];
+const videos = [
+  { type: "file", src: "../videos/sportfest.mp4", title: "Sportfest", note: "A highlight from our school Sportfest.", portrait: true }
+];

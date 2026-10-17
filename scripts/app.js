@@ -221,7 +221,7 @@ if (page === "gallery") {
     const media = v.type === "youtube"
       ? '<iframe src="https://www.youtube.com/embed/' + v.id + '" title="' + v.title + '" loading="lazy" allowfullscreen></iframe>'
       : '<video controls preload="metadata" src="' + v.src + '"></video>';
-    return '<article class="card video"><div class="frame">' + media + "</div><h3>" + v.title + "</h3><p>" + v.note + "</p></article>";
+    return '<article class="card video"><div class="frame' + (v.portrait ? ' tall' : '') + '">' + media + "</div><h3>" + v.title + "</h3><p>" + v.note + "</p></article>";
   }).join("");
     if (videos.length === 0) { $("video-grid").innerHTML = "<p>Videos coming soon.</p>"; }
 }

@@ -183,3 +183,4 @@ fieldset .btn { margin-top: 1rem; }
 @media (max-width: 1150px) { .nav-list { gap: .7rem; font-size: .84rem; } }
 @media (max-width: 480px) { .videos { grid-template-columns: 1fr; } }
 #site-header { display: block; min-height: 3.6rem; }
+.frame.tall { aspect-ratio: 9 / 16; max-width: 315px; margin: 0 auto; }
