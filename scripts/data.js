@@ -152,6 +152,7 @@ const photos = [
   pic("school-7", "School evangelism", "school"),
   pic("nstp-1", "National Service Training Program", "school"),
   pic("nstp-2", "National Service Training Program", "school"),
+  pic("nstp-3", "National Service Training Program", "school"),
   pic("volunteer-1", "Community volunteer work", "community")
 ];
 
