@@ -152,7 +152,7 @@ const photos = [
   pic("school-7", "School evangelism", "school"),
   pic("nstp-1", "National Service Training Program", "school"),
   pic("nstp-2", "National Service Training Program", "school"),
-  pic("nstp-3", "National Service Training Program", "school"),
+  pic("nstp-3", "Class representative duties, 1-CS3", "school"),
   pic("academy-choir", "Academy choir", "school"),
   pic("skit-by-byf", "B.Y.F. skit", "church"),
   pic("skit-by-byf-2", "B.Y.F. skit", "church"),
@@ -164,7 +164,7 @@ const photos = [
   pic("academy-entrepreneurship", "Academy entrepreneurship", "school"),
   pic("volunteer-1", "Community volunteer work", "community")
 ];
-  
+
 // 6. Gallery videos
 // type "file": put the .mp4 in the videos folder. type "youtube": use the video ID from the link.
 const videos = [
