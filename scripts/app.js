@@ -6,7 +6,7 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
 
 // 1. Shared header and footer (same on every page)
 const ICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A1628'/%3E%3Cpath d='M28 10h8v14h14v8H36v22h-8V32H14v-8h14z' fill='%23E8B84A'/%3E%3C/svg%3E";
-const menu = [["index", "Home"], ["about", "About"], ["gospel", "Gospel"], ["encouragement", "Encouragement"], ["service", "Service"], ["education", "Education"], ["achievements", "Achievements"], ["contact", "Contact"]];
+const menu = [["index", "Home"], ["about", "About"], ["gospel", "Gospel"], ["encouragement", "Encouragement"], ["service", "Service"], ["education", "Education"], ["achievements", "Achievements"], ["gallery", "Gallery"], ["contact", "Contact"]];
 $("site-header").outerHTML =
   '<header class="site-header"><a class="brand" href="index.html"><img src="' + ICON + '" alt="" width="28" height="28"><span>Vincent Ferreras</span></a>' +
   '<nav id="nav" aria-label="Main"><ul class="nav-list">' +
@@ -165,6 +165,65 @@ if (page === "service") {
     return '<article class="card" data-cat="' + r.cat + '"><h3>' + heading + "</h3><p>" + r.where + '</p><p class="years">' + r.years + "</p></article>";
   }).join("");
   setupFilters();
+}
+
+if (page === "gallery") {
+  // Photos
+  $("photo-grid").innerHTML = photos.map(function (p) {
+    return '<figure class="card photo" data-cat="' + p.cat + '" tabindex="0" role="button" aria-label="Open photo: ' + p.caption + '">' +
+      '<img src="' + p.src + '" alt="' + p.caption + '" loading="lazy"><figcaption>' + p.caption + "</figcaption></figure>";
+  }).join("");
+  // Show a placeholder while a photo file is missing
+  document.querySelectorAll("#photo-grid img").forEach(function (img) {
+    img.addEventListener("error", function () {
+      const ph = document.createElement("div");
+      ph.className = "ph";
+      ph.textContent = "Add photo: " + img.getAttribute("src").split("/").pop();
+      img.replaceWith(ph);
+    });
+  });
+  setupFilters();
+
+  // Photo viewer (lightbox)
+  const box = $("lightbox"), big = $("lb-img"), cap = $("lb-cap");
+  let list = [], pos = 0;
+  function show() {
+    const img = list[pos].querySelector("img");
+    big.src = img.src;
+    big.alt = img.alt;
+    cap.textContent = img.alt + " (" + (pos + 1) + " of " + list.length + ")";
+  }
+  function openPhoto(card) {
+    list = Array.from(document.querySelectorAll("#photo-grid .card:not(.hidden)")).filter(function (c) { return c.querySelector("img"); });
+    pos = list.indexOf(card);
+    if (pos < 0) { return; }
+    show();
+    box.showModal();
+  }
+  function move(step) { pos = (pos + step + list.length) % list.length; show(); }
+  document.querySelectorAll("#photo-grid .card").forEach(function (c) {
+    c.addEventListener("click", function () { openPhoto(c); });
+    c.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openPhoto(c); }
+    });
+  });
+  $("lb-prev").addEventListener("click", function () { move(-1); });
+  $("lb-next").addEventListener("click", function () { move(1); });
+  $("lb-close").addEventListener("click", function () { box.close(); });
+  box.addEventListener("click", function (e) { if (e.target === box) { box.close(); } });
+  box.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowLeft") { move(-1); }
+    if (e.key === "ArrowRight") { move(1); }
+  });
+
+  // Videos
+  $("video-grid").innerHTML = videos.map(function (v) {
+    const media = v.type === "youtube"
+      ? '<iframe src="https://www.youtube.com/embed/' + v.id + '" title="' + v.title + '" loading="lazy" allowfullscreen></iframe>'
+      : '<video controls preload="metadata" src="' + v.src + '"></video>';
+    return '<article class="card video"><div class="frame">' + media + "</div><h3>" + v.title + "</h3><p>" + v.note + "</p></article>";
+  }).join("");
+    if (videos.length === 0) { $("video-grid").innerHTML = "<p>Videos coming soon.</p>"; }
 }
 
 if (page === "contact") {

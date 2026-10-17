@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery | Vincent Ferreras</title>
+  <meta name="description" content="Photos and videos of faith, service and learning from Vincent Ferreras.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A1628'/%3E%3Cpath d='M28 10h8v14h14v8H36v22h-8V32H14v-8h14z' fill='%23E8B84A'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="gallery">
+  <div id="site-header"></div>
+
+  <main id="top">
+    <section class="block reveal">
+      <h2 data-n="07">Gallery</h2>
+      <p>Moments of faith, service and learning. Click any photo to enlarge it.</p>
+      <div class="filters" role="group" aria-label="Filter photos" data-target="photo-grid">
+        <button type="button" class="chip active" data-filter="all">All</button>
+        <button type="button" class="chip" data-filter="church">Church</button>
+        <button type="button" class="chip" data-filter="school">School</button>
+        <button type="button" class="chip" data-filter="camp">Camp</button>
+        <button type="button" class="chip" data-filter="community">Community</button>
+      </div>
+      <div id="photo-grid" class="gallery"></div>
+    </section>
+
+    <section class="block reveal">
+      <h2 data-n="07.2">Videos</h2>
+      <div id="video-grid" class="videos"></div>
+    </section>
+
+    <dialog id="lightbox" aria-label="Photo viewer">
+      <img id="lb-img" alt="">
+      <p id="lb-cap" class="lb-cap"></p>
+      <div class="lb-controls">
+        <button id="lb-prev" class="ctl" type="button">Previous</button>
+        <button id="lb-next" class="ctl" type="button">Next</button>
+        <button id="lb-close" class="ctl" type="button">Close</button>
+      </div>
+    </dialog>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="../scripts/data.js"></script>
+  <script src="../scripts/app.js"></script>
+</body>
+</html>

@@ -126,3 +126,35 @@ const roles = [
   { title: "Head Committee Member, Camping", where: "Christian Bible Baptist Academy", years: "2024 - 2025", cat: "school" },
   { title: "Group Leader, Camping", where: "Christian Bible Baptist Academy", years: "2022 - 2023", cat: "school" }
 ];
+
+// 5. Gallery photos (files are in the images folder)
+const EXT = ".jpg";
+const pic = (file, caption, cat) => ({ src: "../images/" + file + EXT, caption: caption, cat: cat });
+
+const photos = [
+  pic("014", "Throwback", "church"),
+  pic("choir-1", "Choir ministry", "church"),
+  pic("choir-2", "Choir ministry", "church"),
+  pic("choir-3", "Choir ministry", "church"),
+  pic("serving", "Leading B.Y.S.C. with fellow students at school", "school"),
+  pic("camp-1", "Camping", "camp"),
+  pic("camp-2", "Camping", "camp"),
+  pic("camp-3", "Camping", "camp"),
+  pic("camp-4", "Camping", "camp"),
+  pic("camp-5", "Camping", "camp"),
+  pic("camping", "Camping", "camp"),
+  pic("school-1", "School evangelism", "school"),
+  pic("school-2", "School evangelism", "school"),
+  pic("school-3", "School evangelism", "school"),
+  pic("school-4", "School evangelism", "school"),
+  pic("school-5", "School evangelism", "school"),
+  pic("school-6", "School evangelism", "school"),
+  pic("school-7", "School evangelism", "school"),
+  pic("nstp-1", "National Service Training Program", "school"),
+  pic("nstp-2", "National Service Training Program", "school"),
+  pic("volunteer-1", "Community volunteer work", "community")
+];
+
+// 6. Gallery videos
+// type "file": put the .mp4 in the videos folder. type "youtube": use the video ID from the link.
+const videos = [];
