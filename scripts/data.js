@@ -132,7 +132,7 @@ const EXT = ".jpg";
 const pic = (file, caption, cat) => ({ src: "../images/" + file + EXT, caption: caption, cat: cat });
 
 const photos = [
-  pic("014", "Throwback", "church"),
+  pic("014", "Throwback 2014", "church"),
   pic("choir-1", "Choir ministry", "church"),
   pic("choir-2", "Choir ministry", "church"),
   pic("choir-3", "Choir ministry", "church"),
